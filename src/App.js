@@ -4,7 +4,7 @@ import { getData } from './api/mainapi';
 
 function App() {
   const [data, setData] = useState([]);
-  
+
   const getDatabase = () => {
     getData()
     .then((data) => {
@@ -27,5 +27,6 @@ function App() {
     </div>
   )
 }
+//test
 
 export default App;
