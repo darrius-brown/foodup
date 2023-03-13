@@ -8,25 +8,30 @@ function App() {
   const getDatabase = () => {
     getData()
     .then((data) => {
-      setData(data)
+      setData(Object.entries(data))
     })
   }
 
   useEffect(() => {
     getDatabase()
-  }, [])
+  },)
 
-  console.log(data)
+  // const renderFood = () => {
+  //   return data.map((food, index) => {
+  //     return(
+  //       <p>{food}</p>
+  //     )
+  //   })
+  // }
+  console.log(data[0][1][0].title)
 
   return (
     <div>
       <h1>Foodup</h1>
-      {data.map(item => (
-        <p key={item.id}>{item.results[0]}</p>
-      ))}
+      <p>{data[0][1][0].title}</p>
+      {/* {renderFood()} */}
     </div>
   )
 }
-//test
 
 export default App;
