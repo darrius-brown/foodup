@@ -14,21 +14,22 @@ function App() {
 
   useEffect(() => {
     getDatabase()
-  },)
+  }, [])
 
-  // const renderFood = () => {
-  //   return data.map((food, index) => {
-  //     return(
-  //       <p>{food}</p>
-  //     )
-  //   })
-  // }
-  console.log(data[0][1][0].title)
+  const renderFood = () => {
+    return data.map((food, index) => {
+      return(
+        <p>{food}</p>
+      )
+    })
+  }
+  
+  console.log(data)
 
   return (
     <div>
       <h1>Foodup</h1>
-      <p>{data[0][1][0].title}</p>
+      <p>{data}</p>
       {/* {renderFood()} */}
     </div>
   )
